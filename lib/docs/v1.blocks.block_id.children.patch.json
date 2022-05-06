@@ -1,0 +1,16 @@
+{
+    "desc": "Creates and appends new children blocks to the parent block_id specified.\n\nReturns a paginated list of newly created first level children block objects.",
+    "args": {
+        "block_id": {
+            "path_params"	: true,
+            "type"      : "json",
+            "desc"		: "A database parent or page parent"
+        },
+        "children": {
+            "required"	: false,
+            "type"      : "array",
+            "desc"		: "Page content for the new page as an array of block objects."
+        }
+    }
+}
+

@@ -1,0 +1,10 @@
+{
+    "desc": "Retrieves a Page object using the ID specified. Responses contains page properties, not page content. To fetch page content, use the retrieve block children endpoint.",
+    "args": {
+        "page_id": {
+            "path_params"	: true,
+            "desc"		    : "Identifier for a Notion page"
+        }
+    }
+}
+

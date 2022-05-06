@@ -1,0 +1,32 @@
+{
+    "desc": "Retrieves a Page object using the ID specified.",
+    "args": {
+        "page_id": {
+            "path_params" : true,
+            "desc"		  : "Identifier for a Notion page"
+        },
+
+        "properties": {
+            "required"	: false,
+            "type"		: "json",
+            "desc"		: "Property values to update for this page. The keys are the names or IDs of the property and the values are property values."
+        },
+        "archived": {
+            "required"	: false,
+            "type"		: "boolean",
+            "desc"		: "Set to true to archive (delete) a page. Set to false to un-archive (restore) a page."
+        },
+        "icon": {
+            "required"	: false,
+            "type"		: "json",
+            "desc"		: "Page icon for the new page."
+        },
+
+        "cover": {
+            "required"	: false,
+            "type"      : "json",
+            "desc"		: "Page cover for the new page"
+        }
+    }
+}
+

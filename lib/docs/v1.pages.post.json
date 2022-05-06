@@ -1,0 +1,31 @@
+{
+    "desc": "Creates a new page in the specified database or as a child of an existing page.\n\nIf the parent is a database, the property values of the new page in the properties parameter must conform to the parent database's property schema.\n\nIf the parent is a page, the only valid property is title.\n\nThe new page may include page content, described as blocks in the children parameter.",
+    "args": {
+        "parent": {
+            "required"	: true,
+            "type"      : "json",
+            "desc"		: "A database parent or page parent"
+        },
+        "properties": {
+            "required"	: true,
+            "type"      : "json",
+            "desc"		: "Property values of this page. The keys are the names or IDs of the property and the values are property values."
+        },
+        "children": {
+            "required"	: false,
+            "type"      : "array",
+            "desc"		: "Page content for the new page as an array of block objects."
+        },
+        "icon": {
+            "required"	: false,
+            "type"      : "json",
+            "desc"		: "Page icon for the new page."
+        },
+        "cover": {
+            "required"	: false,
+            "type"      : "json",
+            "desc"		: "Page cover for the new page."
+        }
+    }
+}
+
