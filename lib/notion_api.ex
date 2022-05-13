@@ -44,7 +44,8 @@ Enum.each(Notion.get_documentation(), fn {module_name, functions} ->
       @doc """
       #{Documentation.to_doc_string(doc)}
       """
-      def unquote(function_name)(unquote_splicing(function_arguments), optional_params \\ %{}) do
+      def unquote(function_name)(unquote_splicing(function_arguments), optional_params \\ %{})
+          when is_map(optional_params) do
         required_params_map = Enum.into(unquote(required_params_with_values), %{})
 
         Logger.warning("required_params_map: #{inspect(required_params_map)}", "🐛": :" 801437220")
@@ -60,7 +61,7 @@ Enum.each(Notion.get_documentation(), fn {module_name, functions} ->
           |> Map.reject(fn {_, v} -> v == nil end)
           |> Map.merge(required_params_map)
           # token is special case we inject into header
-          |> Enum.reject(fn {k, _} -> k == :token end)
+          |> Map.reject(fn {k, _} -> k == :token end)
           |> Enum.map(fn {key, val} ->
             Logger.warning("param key: #{inspect(key)}", "🐛": :" 801437221")
             Logger.warning("param val: #{inspect(val)}", "🐛": :" 801437222")

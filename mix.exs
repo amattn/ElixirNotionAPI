@@ -4,8 +4,8 @@ defmodule Notion.Mixfile do
   def project do
     [
       app: :notion_api,
-      version: "0.1.0",
-      elixir: ">= 1.10.4",
+      version: "0.2.0",
+      elixir: ">= 1.13.0",
       elixirc_paths: elixirc_paths(Mix.env()),
       name: "ElixirNotionAPI",
       deps: deps(),
