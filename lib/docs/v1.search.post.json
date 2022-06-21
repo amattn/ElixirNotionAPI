@@ -13,7 +13,7 @@
         },
         "filter": {
             "required"	: false,
-            "type"      : "array",
+            "type"      : "json",
             "desc"		: "When supplied, filters the results based on the provided criteria."
         },
         "start_cursor": {

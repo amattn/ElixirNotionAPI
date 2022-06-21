@@ -1,0 +1,25 @@
+{
+    "desc": "Creates a database as a subpage in the specified parent page, with the specified properties schema.",
+    "errors": {
+        "404": "Returns a 404 if the specified parent page does not exist, or if the integration does not have access to the parent page.",
+        "400": "Returns a 400 if the request is incorrectly formatted, or a 429 HTTP response if the request exceeds the request limits."
+    },
+    "args": {
+        "parent": {
+            "required"	: true,
+            "type"      : "json",
+            "desc"		: "A page parent"
+        },
+        "title": {
+            "required"	: false,
+            "type"      : "array",
+            "desc"		: "Title of database as it appears in Notion. An array of rich text objects."
+        },
+        "properties": {
+            "required"	: true,
+            "type"      : "json",
+            "desc"		: "Property schema of database. The keys are the names of properties as they appear in Notion and the values are property schema objects."
+        }
+    }
+}
+

@@ -63,8 +63,8 @@ Enum.each(Notion.get_documentation(), fn {module_name, functions} ->
           # token is special case we inject into header
           |> Map.reject(fn {k, _} -> k == :token end)
           |> Enum.map(fn {key, val} ->
-            Logger.warning("param key: #{inspect(key)}", "🐛": :" 801437221")
-            Logger.warning("param val: #{inspect(val)}", "🐛": :" 801437222")
+            # Logger.warning("param key: #{inspect(key)}", "🐛": :" 801437221")
+            # Logger.warning("param val: #{inspect(val)}", "🐛": :" 801437222")
 
             convert_param_value(key, val)
           end)
