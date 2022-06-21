@@ -48,7 +48,7 @@ Enum.each(Notion.get_documentation(), fn {module_name, functions} ->
           when is_map(optional_params) do
         required_params_map = Enum.into(unquote(required_params_with_values), %{})
 
-        Logger.warning("required_params_map: #{inspect(required_params_map)}", "🐛": :" 801437220")
+        # Logger.warning("required_params_map: #{inspect(required_params_map)}", "🐛": :" 1231437220")
 
         url = Application.get_env(:notion_api, :base_url, "https://api.notion.com")
 
@@ -71,7 +71,7 @@ Enum.each(Notion.get_documentation(), fn {module_name, functions} ->
           # convert into map
           |> Enum.into(%{})
 
-        Logger.warning("param_map: #{inspect(param_map)}", "🐛": :" 801437223")
+        # Logger.warning("param_map: #{inspect(param_map)}", "🐛": :" 801437223")
 
         # Logger.warning(
         #   "unq path_params_with_values: #{inspect(unquote(path_params_with_values))}",
@@ -131,14 +131,14 @@ Enum.each(Notion.get_documentation(), fn {module_name, functions} ->
     end)
 
     defp get!(url, headers) do
-      Logger.warning("get: #{inspect(url)}", "🐛": :" 945280440")
+      # Logger.warning("get: #{inspect(url)}", "🐛": :" 12345280240")
       Application.get_env(:notion_api, :web_http_client, Notion.DefaultClient).get!(url, headers)
     end
 
     defp post!(url, headers, body) do
-      Logger.warning("post: #{inspect(url)}", "🐛": :" 945280440")
-      Logger.warning("post: #{inspect(headers)}", "🐛": :" 945280441")
-      Logger.warning("post: #{inspect(body)}", "🐛": :" 945280442")
+      # Logger.warning("post: #{inspect(url)}", "🐛": :" 12345280440")
+      # Logger.warning("post: #{inspect(headers)}", "🐛": :" 12345280441")
+      # Logger.warning("post: #{inspect(body)}", "🐛": :" 12345280442")
 
       Application.get_env(:notion_api, :web_http_client, Notion.DefaultClient).post!(
         url,
@@ -148,9 +148,9 @@ Enum.each(Notion.get_documentation(), fn {module_name, functions} ->
     end
 
     defp patch!(url, headers, body) do
-      Logger.warning("patch: #{inspect(url)}", "🐛": :" 1234215315")
-      Logger.warning("patch: #{inspect(headers)}", "🐛": :" 1234215316")
-      Logger.warning("patch: #{inspect(body)}", "🐛": :" 1234215317")
+      # Logger.warning("patch: #{inspect(url)}", "🐛": :" 1234215315")
+      # Logger.warning("patch: #{inspect(headers)}", "🐛": :" 1234215316")
+      # Logger.warning("patch: #{inspect(body)}", "🐛": :" 1234215317")
 
       Application.get_env(:notion_api, :web_http_client, Notion.DefaultClient).patch!(
         url,
