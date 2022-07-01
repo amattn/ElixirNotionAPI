@@ -1,0 +1,10 @@
+{
+    "desc": "Retrieves a User using the ID specified.",
+    "args": {
+        "user_id": {
+            "path_params"	: true,
+            "desc"		    : "Identifier for a Notion user"
+        }
+    }
+}
+

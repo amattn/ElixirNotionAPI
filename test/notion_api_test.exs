@@ -1,6 +1,8 @@
 defmodule NotionApiTest do
   use ExUnit.Case
 
+  require Logger
+
   describe "page test" do
     test "simple get test" do
       # This test ruquires you to setup a test workspace in notion and configure values in config/test.secret.exs
@@ -126,6 +128,21 @@ defmodule NotionApiTest do
           "status" => 401
         }
       )
+    end
+  end
+
+  describe "user test" do
+    test "simple get list test" do
+      options = %{
+        token: Application.fetch_env!(:notion_api, :test_workspace_integration_token)
+      }
+
+      resp = Notion.V1.Users.get(options)
+
+      refute resp["object"] == "error"
+      assert resp["object"] == "list"
+      # assert resp["has_more"] == false
+      # Logger.warning("MESSAGE: #{inspect(resp, pretty: true, width: 4)}", "🐛": :" 1932266915")
     end
   end
 end
