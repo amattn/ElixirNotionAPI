@@ -12,4 +12,9 @@ defmodule Notion.Databases do
         {:ok, resp}
     end
   end
+
+  def query_database(database_id, filter, options \\ %{}) when is_bitstring(database_id) do
+    all_options = Enum.into(%{filter: filter}, options)
+    Notion.V1.Databases.DatabaseId.Query.post(database_id, all_options)
+  end
 end

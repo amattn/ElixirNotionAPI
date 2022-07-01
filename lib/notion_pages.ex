@@ -11,4 +11,17 @@ defmodule Notion.Pages do
         {:ok, resp}
     end
   end
+
+  def create_db_page(database_id, properties \\ %{}, options \\ %{})
+      when is_map(properties) and is_map(options) do
+    resp = Notion.V1.Pages.post(%{"database_id" => database_id}, properties, options)
+
+    case resp do
+      %{"object" => "error"} ->
+        {:error, resp}
+
+      _ ->
+        {:ok, resp}
+    end
+  end
 end
